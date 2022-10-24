@@ -25,7 +25,6 @@ const Main = ({ handleClick, handlePdp }) => {
         setAllProducts(data.products);
         setProductList(slicedProduct);
       } catch (error) {
-        console.log(`Error in getting product list`, error);
         toast.error(error.message);
       } finally {
         setTimeout(() => {
@@ -47,8 +46,6 @@ const Main = ({ handleClick, handlePdp }) => {
     setSorting(false);
   }, [page]);
 
-  console.log(`productList`, productList);
-  console.log(`allProducts`, allProducts);
 
   const handleSort = () => {
     setSorting(!isSorting);

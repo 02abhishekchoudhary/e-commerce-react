@@ -28,7 +28,6 @@ const AddProduct = () => {
     rating: "",
     link: "",
   });
-  console.log(`state of product`, state);
 
   const handleChange = (e) => {
     setState({
@@ -48,7 +47,6 @@ const AddProduct = () => {
         link: "",
       });
     } catch (error) {
-      console.log(error.message);
       toast.error(error.message);
     }
   };
@@ -56,7 +54,7 @@ const AddProduct = () => {
   return (
     <>
       <Grid>
-        <div className="formm">
+        <div className="form">
           <Paper elevation={10} style={paperStyle}>
             <h2>Create Product</h2>
             <Typography variant="caption">Create Now</Typography>

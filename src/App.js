@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Main from "./components/Main";
 import Navbar from "./components/navbar";
 import Cart from "./components/cart";
@@ -36,10 +36,8 @@ const App = () => {
   };
 
   const handlePdp = (e, item) => {
-    console.log(`item of pdp`, item);
     setProductDetailspage(item);
   };
-  console.log(`productDetailspage`, productDetailspage);
 
   return (
     <>

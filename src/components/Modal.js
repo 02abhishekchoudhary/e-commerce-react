@@ -45,11 +45,12 @@ export default function TransitionsModal({
       price: updatedValue.price,
       rating: updatedValue.rating,
     };
+
     const { data } = await axios.put(
       `https://dummyjson.com/products/${item.id}`,
       payload
     );
-    console.log(`updatedData`, data);
+
     setProductList(() => {
       let newUpdatedProduct = [];
       productList?.map((i) => {
@@ -58,8 +59,8 @@ export default function TransitionsModal({
         } else {
           newUpdatedProduct.push(data);
         }
-        return newUpdatedProduct;
       });
+      return newUpdatedProduct;
     });
     setModalOpened(false);
     setAnchorEl(null);

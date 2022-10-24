@@ -3,7 +3,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TransitionsModal from "./Modal";
 import { toast } from "react-toastify";
 
@@ -19,8 +19,6 @@ export default function BasicMenu({
   const { title, description, price, thumbnail, rating } = item;
   const [isEditing, setEditing] = useState(false);
   const [isModalOpened, setModalOpened] = useState(false);
-  console.log(`isModalOpened`, isModalOpened);
-
   const [updatedValue, setUpdatedValue] = useState({
     title: "",
     description: "",
@@ -38,7 +36,6 @@ export default function BasicMenu({
       rating: item.rating,
     });
   };
-  console.log(`updated Value from menu`, updatedValue);
 
   const handleDelete = (e, item) => {
     const newProductList = productList.filter((p) => p.id !== item.id);
